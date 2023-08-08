@@ -6,7 +6,7 @@ def create_book(request):
         form=CreateBookForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('book_list')
+            return redirect('index')
         
     else:
         form=CreateBookForm()
