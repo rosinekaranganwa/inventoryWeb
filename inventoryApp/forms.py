@@ -4,4 +4,4 @@ from .models import CreateBook
 class CreateBookForm(forms.ModelForm):
     class Meta:
         model = CreateBook
-        fields = ['title', 'author', 'publication_date', 'quantity', 'price']
+        fields = ['title', 'author', 'quantity', 'price']
