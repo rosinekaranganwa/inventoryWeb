@@ -24,6 +24,7 @@
                 <td>{{ book.price }}</td>
                 <td>
                     <a href="{% url 'update_book' pk=book.pk %}">Update</a>
+                    <a href="{% url 'delete_book' pk=book.pk %}">Delete</a>
                 </td>
                 
             </tr>
