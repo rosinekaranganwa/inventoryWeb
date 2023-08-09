@@ -21,3 +21,15 @@ def list_books(request):
     books = CreateBook.objects.all()
     return render(request, 'books/list_books.html', {'books': books})
 
+def update_book(request, pk):
+    book = get_object_or_404(CreateBook, pk=pk)
+    if request.method == 'POST':
+        form = CreateBookForm(request.POST, instance=book)
+        if form.is_valid():
+            form.save()
+            return redirect('list_books')
+    else:
+        form = CreateBookForm(instance=book)
+    return render(request, 'books/update_book.html', {'form': form, 'book': book})
+
+

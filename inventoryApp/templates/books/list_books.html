@@ -22,9 +22,14 @@
                 <td>{{ book.author }}</td>
                 <td>{{ book.quantity }}</td>
                 <td>{{ book.price }}</td>
+                <td>
+                    <a href="{% url 'update_book' pk=book.pk %}">Update</a>
+                </td>
+                
             </tr>
             {% endfor %}
         </tbody>
+        
     </table>
 </body>
 </html>
